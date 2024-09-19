@@ -1,0 +1,204 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+    position: relative;
+}
+
+.envelope {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    background-color: #ff6b6b;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 1s ease;
+}
+
+.envelope .flap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-color: #ff5252;
+    transform-origin: top;
+    transform: rotateX(0deg);
+    transition: transform 1s ease;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.envelope .message-preview {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 1.2em;
+}
+
+.letter {
+    display: none;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 400px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.letter h1 {
+    color: #ff6b6b;
+    margin-bottom: 15px;
+}
+
+.letter p {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Bunga */
+.flower {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    opacity: 0;
+}
+
+.petal {
+    position: absolute;
+    width: 60px; /* Ukuran kelopak lebih besar */
+    height: 120px; /* Ukuran kelopak lebih besar */
+    background-color: pink;
+    border-radius: 50% 50% 0 0;
+    transform-origin: bottom center;
+    animation: growPetal 2s ease-in-out forwards;
+}
+
+.stem {
+    position: absolute;
+    width: 12px; /* Lebar batang lebih besar */
+    height: 200px; /* Tinggi batang lebih panjang */
+    background-color: green;
+    top: 120px; /* Penyesuaian posisi batang */
+    left: calc(50% - 6px);
+    opacity: 0;
+    animation: growStem 2s ease-in-out forwards;
+}
+
+/* Animasi kelopak bunga */
+@keyframes growPetal {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+/* Animasi batang bunga */
+@keyframes growStem {
+    from {
+        height: 0;
+        opacity: 0;
+    }
+    to {
+        height: 200px;
+        opacity: 1;
+    }
+}
+/* Bunga */
+.flower {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    opacity: 0;
+    animation: flowerMove 5s ease-in-out infinite; /* Tambahkan animasi */
+}
+
+.petal {
+    position: absolute;
+    width: 60px; /* Ukuran kelopak lebih besar */
+    height: 120px; /* Ukuran kelopak lebih besar */
+    background-color: pink;
+    border-radius: 50% 50% 0 0;
+    transform-origin: bottom center;
+    animation: growPetal 2s ease-in-out forwards;
+}
+
+.stem {
+    position: absolute;
+    width: 12px; /* Lebar batang lebih besar */
+    height: 200px; /* Tinggi batang lebih panjang */
+    background-color: green;
+    top: 120px; /* Penyesuaian posisi batang */
+    left: calc(50% - 6px);
+    opacity: 0;
+    animation: growStem 2s ease-in-out forwards;
+}
+
+/* Animasi kelopak bunga */
+@keyframes growPetal {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+/* Animasi batang bunga */
+@keyframes growStem {
+    from {
+        height: 0;
+        opacity: 0;
+    }
+    to {
+        height: 200px;
+        opacity: 1;
+    }
+}
+
+/* Animasi goyangan bunga */
+@keyframes flowerMove {
+    0%, 100% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    50% {
+        transform: translate(-50%, -48%) rotate(5deg); /* Sedikit goyangan */
+    }
+}
+
+
